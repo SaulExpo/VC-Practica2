@@ -1,4 +1,4 @@
-## Practica 1 Visión por Computador
+## Practica 2 Visión por Computador
 
 ### Contenidos
 
