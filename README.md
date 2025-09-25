@@ -48,15 +48,17 @@ Como último paso de esta tarea se propone comparar los resultados de Sobel y Ca
 
 ![Graficos de Sobel y Canny](image-4.png)
 
-### Tarea 3: Modificar el plano de una imagen
+### Tarea 3: Modos de imágen para presentar la Asignatura
 
-Gracias al código utilizado en el ejemplo propuesto en el cuaderno de la práctica, se decidió modifical el tercer plano de la imágen, el referente con la variable "b_img", indicando lo siguiente:
+La tarea número 3 propone mostrar diferentes imágenes para enseñar a alguien nuevo de que va la asignatura. Para ello se optó por utilizar 3 modos de cámara.
 
-```
-b_img = cv2.merge([b, r, r])
-```
+1. Un modo normal en el que la cámara se muestre sin ningúna variación. Lo único resaltable es que se añadió texto en la imágen (como se vió en la práctica 2) Que indique en que modo se encuentra gracias a ```cv2.putText()```.
 
-estableciendo tanto el canal verde como el rojo con tonos de rojo
+2. Modo de escala de grises. Se transforma la imágen en escala de grises por medio de ```cv2.cvtColor()``` y también se le añade un texto para indicar el modo.
+
+3. Modo bordes. Usando Canny como se aprendió en esta práctica podemos conseguir un efecto en el que se muestren únicamente los bordes resaltables en la cámara.
+
+Para poder conseguir el cambio de modo se crea una variable modo que va rotando entre 3 parámetros al pulsar en el teclado la tecla "m".
 
 ### Tarea 4: Círculo zona mas clara y oscura
 
