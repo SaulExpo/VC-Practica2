@@ -3,7 +3,7 @@
 ### Contenidos
 
 [Preparación](#preparación)  
-[Contar píxeles blancos por filas Canny](#tarea-1-contar-pixeles-blancos-por-filas-canny)  
+[Contar píxeles blancos por filas Canny](#tarea-1-contar-píxeles-blancos-por-filas-canny)  
 [Contar fila y columnas Sobel](#tarea-2-contar-fila-y-columnas-sobel)  
 [Modos de imagen para presentar la asignatura](#tarea-3-modos-de-imagen-para-presentar-la-asignatura)  
 [Procesamiento de imagen](#tarea-4-procesamiento-de-imagen)  
