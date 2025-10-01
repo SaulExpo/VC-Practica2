@@ -1,4 +1,4 @@
-## Practica 1 Visión por Computador
+## Practica 2 Visión por Computador
 
 ### Contenidos
 
@@ -61,10 +61,34 @@ Para poder conseguir el cambio de modo se crea una variable modo que va rotando 
 
 ### Tarea 4: Procesamiento de imagen
 
+Para la última tarea decidí realizar un procesamiento de la imágen detectando pixeles rojos y cambiando la amplitud de una onda en función de la altura que se encuentre en la pantalla.
 
+Lo primero que se realizó es obtener un rango de rojos que se vayan a detectar para crear una máscara con el objetivo de definir bien el color que se desea buscar:
 
+```
+    lower_red1 = np.array([0, 150, 150])
+    upper_red1 = np.array([10, 255, 255])
+    lower_red2 = np.array([160, 150, 150])
+    upper_red2 = np.array([179, 255, 255])
 
+    mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
+    mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
+    mask = cv2.bitwise_or(mask1, mask2)
+´´´
 
+Posteriormente se va a detectar el rojo en la imágen utiliando la máscara que se obtuvo anteriormente ```cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)```. Con esta instrucción se trata de detectar únicamente los contornos externos de rojo para poder medir a partir de ellos.
+
+A continuación se creará un circulo de color azul en la zona roja de mayor valor y se obtendrá su centro para incluirlo en la variable amplitud para la posterior onda:
+
+```
+if M["m00"] > 0:
+cx = int(M["m10"] / M["m00"])
+cy = int(M["m01"] / M["m00"])
+cv2.circle(frame, (cx, cy), 8, (255, 0, 0), -1)
+amplitude = int(100 * (1 - cy / alto)) + 10 
+```
+
+Para acabar y gracias a la ayuda de una IA, creo la onda y determino la amplitud necesaria en función de la altura del objeto de color rojo.
 
 
 
