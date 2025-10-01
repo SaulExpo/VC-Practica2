@@ -74,7 +74,7 @@ Lo primero que se realizó es obtener un rango de rojos que se vayan a detectar 
     mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
     mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
     mask = cv2.bitwise_or(mask1, mask2)
-´´´
+```
 
 Posteriormente se va a detectar el rojo en la imágen utiliando la máscara que se obtuvo anteriormente ```cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)```. Con esta instrucción se trata de detectar únicamente los contornos externos de rojo para poder medir a partir de ellos.
 
